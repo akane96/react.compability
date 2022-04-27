@@ -1,0 +1,41 @@
+.headerWrapper{
+  max-width: 100%;
+  height: 60px;
+  background-color: #A24DA6;
+  color: #fff;
+}
+.navHeader{
+  width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-self: center;
+}
+.headerName{
+  height: inherit;
+  align-self: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: 2em;
+}
+.headerContent{
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+@media screen and (max-width: 900px) {
+  .navHeader{
+    width: 600px;
+  }
+
+
+}
+
+@media screen and(max-width:600px ) {
+  .navHeader{
+    width: 400px;
+  }
+}
