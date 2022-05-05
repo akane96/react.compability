@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import AppHeader from "./AppHeader/AppHeader";
 import AppMain from "./AppMain/AppMain";
 import AppFooter from "./AppFooter/AppFooter";
+import MainModal from "../Modals/MainModal/MainModal";
 
 
 interface Props {
@@ -20,11 +21,22 @@ const App:React.FC<Props> = ({
     color,
     ...props
 }) => {
+    const [modalActive,setModalActive] = useState<boolean>(false)
+    const clickHandler = () => {
+        setModalActive(!modalActive)
+    }
+    const mainModal = (
+        <MainModal name={'123'}>hjbhbj</MainModal>
+    )
+
     return (
         <>
-            <AppHeader/>
-            <AppMain/>
-            <AppFooter/>
+            <div>
+                <AppHeader/>
+                <AppMain action={clickHandler}/>
+                <AppFooter/>
+            </div>
+            {modalActive && mainModal}
         </>
     )
 };
