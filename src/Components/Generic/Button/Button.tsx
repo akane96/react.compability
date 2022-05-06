@@ -1,20 +1,23 @@
-import React, {ReactNode} from 'react';
+import React, {ButtonHTMLAttributes, HTMLProps, ReactNode} from 'react';
 
 interface Props{
     onClick : ()=>void,
-    type:string,
+    type: "button" | "submit" | "reset" | undefined,
     children?:ReactNode,
-
+    className:string
 }
 
 const Button:React.FC<Props> = ({
     onClick,
     type,
-    children
+    children,
+    className
 }) => {
     return (
         <div>
-            {children}
+            <button type={type} className={className} onClick={onClick}>
+                {children}
+            </button>
         </div>
     );
 };

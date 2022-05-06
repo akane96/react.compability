@@ -13,10 +13,11 @@ const SectionMap = new Map<SectionType,any>()
     .set(SectionType.Secondary, style.secondaryStyle)
 
 interface Props{
-    // @ts-ignore
     type:SectionType,
     children?:ReactNode
 }
+
+
 const Section:React.FC<Props> = (
     {
         type,

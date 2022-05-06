@@ -8,8 +8,6 @@ const AppFooter = () => {
                 <span>Вскоре они появятся)</span>
                 <div className={style.copyRights}>@Copyrights 2022</div>
             </div>
-
-
         </Section>
     );
 };
