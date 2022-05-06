@@ -1,0 +1,79 @@
+.wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(139, 133, 133, 0.5);
+  z-index: 1001;
+
+}
+
+.modal{
+  background: #ffffff;
+  color: #000;
+  flex-basis: 1056px;
+  height:600px;
+  border-radius: 30px;
+
+  .header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: 800;
+    font-size: 38px;
+    border-bottom: #000 2px solid;
+    padding:10px 20px;
+    position: relative;
+  }
+}
+.modalContainer{
+  height: 250px;
+}
+@media only screen and (max-width: 1200px) {
+  .modal{
+    flex-basis: 700px;
+    height: 500px;
+  }
+
+
+}
+
+.closeModal {
+  align-self: center;
+  padding-top: 10px;
+  width: 24px;
+  height: 24px;
+  opacity: 0.2;
+  cursor: pointer;
+  transition: opacity ease 0.5s;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.closeModal::before,
+.closeModal::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  right:15px;
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: #000;
+}
+
+.closeModal::before {
+  transform: rotate(45deg);
+}
+
+.closeModal::after {
+  transform: rotate(-45deg);
+}

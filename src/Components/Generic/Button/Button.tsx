@@ -1,10 +1,12 @@
-import React, {ButtonHTMLAttributes, HTMLProps, ReactNode} from 'react';
+import React, {ReactNode} from 'react';
+import style from './style.module.scss'
 
 interface Props{
     onClick : ()=>void,
-    type: "button" | "submit" | "reset" | undefined,
+    type?:"button" | "submit" | "reset" | undefined,
     children?:ReactNode,
-    className:string
+    className?: string
+
 }
 
 const Button:React.FC<Props> = ({
@@ -14,8 +16,8 @@ const Button:React.FC<Props> = ({
     className
 }) => {
     return (
-        <div>
-            <button type={type} className={className} onClick={onClick}>
+        <div className={className}>
+            <button className={style.button} onClick={onClick} type={type || 'button'} >
                 {children}
             </button>
         </div>
