@@ -1,4 +1,4 @@
-import React, {ReactNode} from 'react';
+import React, {MouseEventHandler, ReactNode} from 'react';
 import style from './style.module.scss'
 
 interface Props{

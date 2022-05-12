@@ -4,6 +4,9 @@ import AppMain from "./AppMain/AppMain";
 import AppFooter from "./AppFooter/AppFooter";
 import MainModal from "../Modals/MainModal/MainModal";
 import FirstModal from "../Modals/FirstModal/FirstModal";
+import SecondModal from "../Modals/SecondModal/SecondModal";
+import ThirdModal from "../Modals/ThirdModal/ThirdModal";
+import {ModalState} from "../Types/models";
 
 
 interface Props {
@@ -26,9 +29,19 @@ const App:React.FC<Props> = ({
     const clickHandler = () => {
         setModalActive(!modalActive)
     }
+
+    const [modalState, setModalState] = useState<ModalState>('First')
+
+    const handleChangeModalState = (state:ModalState)=>{
+
+        setModalState(state)
+    }
+
     const mainModal = (
         <MainModal setOpen={()=>setModalActive(!modalActive)} name={'Подсчёт совместимости'}>
-            <FirstModal></FirstModal>
+            <FirstModal  disabled={modalState!=='First'} onClick={()=>handleChangeModalState('Second')}  />
+            <SecondModal disabled={modalState!=='Second'} onClick={()=>handleChangeModalState('Third')} />
+            <ThirdModal  disabled={modalState!=='Third'} onClick={()=>handleChangeModalState('First')} />
         </MainModal>
     )
 
