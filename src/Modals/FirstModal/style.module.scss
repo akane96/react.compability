@@ -9,5 +9,14 @@
   align-self: flex-start;
   padding-top: 20px;
   padding-left: 100px;
+  font: {
+    size: x-large;
+    weight: bold;
+  };
+}
+
+.actionInputs{
+  border: 1px solid #FF9900;
+  width: 100%;
 }
 

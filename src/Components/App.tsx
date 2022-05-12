@@ -27,7 +27,7 @@ const App:React.FC<Props> = ({
         setModalActive(!modalActive)
     }
     const mainModal = (
-        <MainModal setOpen={()=>setModalActive(!modalActive)} name={'Header'}>
+        <MainModal setOpen={()=>setModalActive(!modalActive)} name={'Подсчёт совместимости'}>
             <FirstModal></FirstModal>
         </MainModal>
     )
