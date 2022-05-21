@@ -16,8 +16,6 @@ interface Props {
     color?:string
 }
 
-
-
 const App:React.FC<Props> = ({
     str,
     width,
@@ -28,6 +26,7 @@ const App:React.FC<Props> = ({
     const [modalActive,setModalActive] = useState<boolean>(false)
     const clickHandler = () => {
         setModalActive(!modalActive)
+        setModalState('First')
     }
 
     const [modalState, setModalState] = useState<ModalState>('First')

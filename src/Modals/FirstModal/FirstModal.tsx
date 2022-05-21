@@ -14,9 +14,9 @@ const FirstModal:FC <Props> = ({disabled,onClick}) => {
         <>
         <div className={style.wrapper}>
                     <div  className={style.header}>Введите имена:</div>
-                    <div>
-                        <input className={style.actionInputs} placeholder="Ваше имя:"/>
-                        <input className={style.actionInputs} placeholder="Имя второго человека:"/>
+                    <div className={style.actionInputs}>
+                        <input placeholder="Ваше имя:"/>
+                        <input placeholder="Имя второго человека:"/>
                     </div>
                     <div className={style.button}>
                         <Button className={style.button} type={'button'} onClick={onClick} >Продолжить</Button>
