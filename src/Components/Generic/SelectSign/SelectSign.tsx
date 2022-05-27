@@ -1,10 +1,13 @@
 import React from 'react';
 import Select from "../Select/Select";
-
-const SelectSign = () => {
+interface Props{
+    value:string,
+    onChange:any
+}
+const SelectSign : React.FC<Props> = ({value,onChange}) => {
     return (
         <div>
-            <Select>
+            <Select value={value} onChange={onChange} >
                 <option>Овен</option>
                 <option>Телец</option>
                 <option>Близнецы</option>

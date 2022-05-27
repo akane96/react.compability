@@ -42,8 +42,8 @@ const App:React.FC<Props> = ({
     const mainModal = (
         <MainModal setOpen={()=>setModalActive(!modalActive)} name={'Подсчёт совместимости'}>
             <FirstModal  persons={{firstPerson,secondPerson}}  disabled={modalState!=='First'} onClick={()=>handleChangeModalState('Second')}  />
-            <SecondModal disabled={modalState!=='Second'} onClick={()=>handleChangeModalState('Third')} />
-            <ThirdModal  disabled={modalState!=='Third'} onClick={()=>handleChangeModalState('First')} />
+            <SecondModal persons={{firstPerson,secondPerson}} disabled={modalState!=='Second'} onClick={()=>handleChangeModalState('Third')} />
+            <ThirdModal persons={{firstPerson,secondPerson}}  disabled={modalState!=='Third'} onClick={()=>handleChangeModalState('First')} />
         </MainModal>
     )
 

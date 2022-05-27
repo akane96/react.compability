@@ -17,8 +17,8 @@ const FirstModal:FC <Props> = ({disabled,onClick,persons}) => {
         onClick()
     }
 
-    const [firstName,setFirstName] = useState('')
-    const [secondName,setSecondName] = useState('')
+    const [firstName,setFirstName] = useState('123')
+    const [secondName,setSecondName] = useState('123')
 
     return !disabled ?(
         <>
@@ -34,8 +34,8 @@ const FirstModal:FC <Props> = ({disabled,onClick,persons}) => {
                                onChange={(e)=>setSecondName(e.currentTarget.value)}
                         />
                     </div>
-                    <div className={style.button}>
-                        <Button className={style.button} type={'button'} onClick={handleSubmit} >Продолжить</Button>
+            <div className={style.button}>
+                        <Button disabled={!firstName && !secondName} className={style.button} type={'button'} onClick={handleSubmit} >Продолжить</Button>
                     </div>
             </div>
         </>
