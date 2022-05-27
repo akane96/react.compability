@@ -5,18 +5,18 @@ const SelectSign = () => {
     return (
         <div>
             <Select>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-                <option>11</option>
-                <option>12</option>
+                <option>Овен</option>
+                <option>Телец</option>
+                <option>Близнецы</option>
+                <option>Рак</option>
+                <option>Лев </option>
+                <option>Дева</option>
+                <option>Весы</option>
+                <option>Скорпион</option>
+                <option>Стрелец</option>
+                <option>Козерог</option>
+                <option>Водолей</option>
+                <option>Рыбы</option>
             </Select>
         </div>
     );

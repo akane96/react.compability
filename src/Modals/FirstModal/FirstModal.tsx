@@ -1,28 +1,43 @@
-import React, {FC, HTMLAttributes, MouseEventHandler} from 'react';
+import React, {FC, HTMLAttributes, MouseEventHandler, useState} from 'react';
 import MainModal from "../MainModal/MainModal";
 import style from './style.module.scss'
 import Button from "../../Components/Generic/Button/Button";
-import {ModalState} from "../../Types/models";
+import {ModalState, Person} from "../../Types/models";
 interface Props extends HTMLAttributes<HTMLElement >{
     disabled:boolean
     onClick:()=>void
+    persons:{firstPerson:Person,secondPerson:Person}
 }
 
-const FirstModal:FC <Props> = ({disabled,onClick}) => {
+const FirstModal:FC <Props> = ({disabled,onClick,persons}) => {
+
+    const handleSubmit = ()=> {
+        persons.firstPerson.name=firstName
+        persons.secondPerson.name=secondName
+        onClick()
+    }
+
+    const [firstName,setFirstName] = useState('')
+    const [secondName,setSecondName] = useState('')
 
     return !disabled ?(
         <>
         <div className={style.wrapper}>
                     <div  className={style.header}>Введите имена:</div>
                     <div className={style.actionInputs}>
-                        <input placeholder="Ваше имя:"/>
-                        <input placeholder="Имя второго человека:"/>
+                        <input placeholder="Ваше имя:"
+                               value={firstName}
+                               onChange={(e)=>setFirstName(e.currentTarget.value)}
+                        />
+                        <input placeholder="Имя второго человека:"
+                               value={secondName}
+                               onChange={(e)=>setSecondName(e.currentTarget.value)}
+                        />
                     </div>
                     <div className={style.button}>
-                        <Button className={style.button} type={'button'} onClick={onClick} >Продолжить</Button>
+                        <Button className={style.button} type={'button'} onClick={handleSubmit} >Продолжить</Button>
                     </div>
             </div>
-
         </>
     ) : <></>
 };

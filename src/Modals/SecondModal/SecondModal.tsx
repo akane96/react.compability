@@ -1,8 +1,10 @@
 import React, {FC, HTMLAttributes} from 'react';
 import {ModalState} from "../../Types/models";
 import style from "../FirstModal/style.module.scss";
+import modalStyle from './style.module.scss'
 import Button from "../../Components/Generic/Button/Button";
 import SelectSign from "../../Components/Generic/SelectSign/SelectSign";
+
 interface Props {
     disabled:boolean
     onClick:()=>void
@@ -12,7 +14,7 @@ const SecondModal:FC<Props> = ({disabled,onClick}) => {
         <>
             <div className={style.wrapper}>
                 <div  className={style.header}>Введите имена:</div>
-                <div className={style.actionInputs}>
+                <div className={modalStyle.selectButtons}>
                     <SelectSign></SelectSign>
                     <SelectSign></SelectSign>
                 </div>

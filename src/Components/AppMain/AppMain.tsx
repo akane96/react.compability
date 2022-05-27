@@ -30,7 +30,7 @@ const AppMain:React.FC<Props> = ({action}) => {
                     достаточно знать лишь имя и знак зодиака!
                 </p>
             </div>
-            <div>
+            <div className={style.imgSection}>
                 <Image>
                     <img className={style.primaryHeart} src={`${process.env.PUBLIC_URL}/assets/Heart.png`}/>
                     <img className = {style.secondaryHeart} src={`${process.env.PUBLIC_URL}/assets/Heart-1.png`}/>

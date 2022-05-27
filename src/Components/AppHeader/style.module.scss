@@ -30,6 +30,9 @@
   .navHeader{
     width: 600px;
   }
+  .headerName{
+    font-size: 25px;
+  }
 
 
 }
@@ -37,5 +40,8 @@
 @media screen and(max-width:600px ) {
   .navHeader{
     width: 400px;
+  }
+  .headerName{
+    font-size: 20px;
   }
 }

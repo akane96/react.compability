@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import AppHeader from "./AppHeader/AppHeader";
 import AppMain from "./AppMain/AppMain";
 import AppFooter from "./AppFooter/AppFooter";
@@ -6,7 +6,7 @@ import MainModal from "../Modals/MainModal/MainModal";
 import FirstModal from "../Modals/FirstModal/FirstModal";
 import SecondModal from "../Modals/SecondModal/SecondModal";
 import ThirdModal from "../Modals/ThirdModal/ThirdModal";
-import {ModalState} from "../Types/models";
+import {IPerson, ModalState, Person} from "../Types/models";
 
 
 interface Props {
@@ -24,6 +24,10 @@ const App:React.FC<Props> = ({
     ...props
 }) => {
     const [modalActive,setModalActive] = useState<boolean>(false)
+
+    const [firstPerson,setFirstPerson] = useState<Person>(new Person('',''))
+    const [secondPerson,setSecondPerson] = useState<Person>(new Person('',''))
+
     const clickHandler = () => {
         setModalActive(!modalActive)
         setModalState('First')
@@ -32,13 +36,12 @@ const App:React.FC<Props> = ({
     const [modalState, setModalState] = useState<ModalState>('First')
 
     const handleChangeModalState = (state:ModalState)=>{
-
         setModalState(state)
     }
 
     const mainModal = (
         <MainModal setOpen={()=>setModalActive(!modalActive)} name={'Подсчёт совместимости'}>
-            <FirstModal  disabled={modalState!=='First'} onClick={()=>handleChangeModalState('Second')}  />
+            <FirstModal  persons={{firstPerson,secondPerson}}  disabled={modalState!=='First'} onClick={()=>handleChangeModalState('Second')}  />
             <SecondModal disabled={modalState!=='Second'} onClick={()=>handleChangeModalState('Third')} />
             <ThirdModal  disabled={modalState!=='Third'} onClick={()=>handleChangeModalState('First')} />
         </MainModal>

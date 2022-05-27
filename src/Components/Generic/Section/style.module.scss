@@ -55,3 +55,10 @@
   background: rgb(119,144,235);
   background: linear-gradient(0deg, rgba(119,144,235,1) 23%, rgba(203,130,206,1) 60%);
 }
+@media screen and (max-width: 900px){
+  .wrapper{
+    flex-direction: column;
+    max-width: 600px;
+  }
+
+}

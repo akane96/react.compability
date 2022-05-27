@@ -32,3 +32,12 @@ svg{
   width: 100%;
   top: 10rem;
 }
+
+
+
+@media screen and( max-width: 600px) {
+  .imgSection{
+    display: none;
+  }
+
+}

@@ -11,6 +11,8 @@
   bottom: 0;
   background: rgba(139, 133, 133, 0.5);
   z-index: 1001;
+  padding: 0;
+  margin: 0;
 
 }
 
@@ -20,6 +22,7 @@
   flex-basis: 1056px;
   height:600px;
   border-radius: 30px;
+  margin: 40px;
 
   .header{
     display: flex;
@@ -77,3 +80,4 @@
 .closeModal::after {
   transform: rotate(-45deg);
 }
+
