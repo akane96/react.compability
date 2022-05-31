@@ -17,8 +17,8 @@ const FirstModal:FC <Props> = ({disabled,onClick,persons}) => {
         onClick()
     }
 
-    const [firstName,setFirstName] = useState('123')
-    const [secondName,setSecondName] = useState('123')
+    const [firstName,setFirstName] = useState('')
+    const [secondName,setSecondName] = useState('')
 
     return !disabled ?(
         <>
