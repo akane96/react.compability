@@ -6,11 +6,10 @@ import Button from "../../Components/Generic/Button/Button";
 import SelectSign from "../../Components/Generic/SelectSign/SelectSign";
 
 interface Props {
-    disabled:boolean
     onClick:()=>void
     persons:{firstPerson:Person,secondPerson:Person}
 }
-const SecondModal:FC<Props> = ({disabled,onClick,persons}) => {
+const SecondModal:FC<Props> = ({onClick,persons}) => {
 
     const [firstSign,setFirstSign] = useState('Овен')
     const [secondSign,setSecondSign] = useState('Овен')
@@ -18,10 +17,12 @@ const SecondModal:FC<Props> = ({disabled,onClick,persons}) => {
     const handleSubmit = ()=> {
         persons.firstPerson.sign=firstSign
         persons.secondPerson.sign=secondSign
+        setFirstSign('Овен')
+        setSecondSign('Овен')
         onClick()
     }
 
-    return !disabled ?(
+    return  (
         <>
             <div className={style.wrapper}>
                 <div  className={style.header}>Введите имена:</div>
@@ -34,7 +35,7 @@ const SecondModal:FC<Props> = ({disabled,onClick,persons}) => {
                 </div>
             </div>
         </>
-    ) : <></>
+    )
 };
 
 export default SecondModal;

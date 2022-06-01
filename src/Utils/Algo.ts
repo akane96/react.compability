@@ -4,13 +4,12 @@ import {compatibilityObject} from "../Types/models";
 export function mainAlgo(personA:Person, personB:Person) {
     //@ts-ignore
     const compatibilitySign = Number(compatibilityObject[personA.sign][personB.sign]) / 100
-    const nameA = personA.name //Петр
-    const nameB = personB.name //Арсений
+    const nameA = personA.name
+    const nameB = personB.name
     const startNumberA = translateToNumber(nameA,nameB)
     const startNumberB = translateToNumber(nameB,nameA)
     const sumNumbers = sumStartValues(startNumberA,startNumberB)
     const resultNames = sumNumberRanks(sumNumbers) / 100
-    console.log(resultNames,compatibilitySign)
     return Math.round((resultNames+compatibilitySign)*50)
 }
 
@@ -29,7 +28,6 @@ function translateToNumber(nameA:string,nameB:string){
 }
 
 function sumStartValues(numA:number, numB:number){
-    console.log(numA,numB)
     let minValue = numA.toString().length > numB.toString().length ? numB.toString() : numA.toString()
     let maxValue = numA.toString().length > numB.toString().length ? numA.toString() : numB.toString()
     const minLength = minValue.length

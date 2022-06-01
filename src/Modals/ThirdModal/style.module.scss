@@ -1,0 +1,89 @@
+.container{
+  width: 100%;
+  height: 100%;
+}
+.content{
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+.contentInfo{
+  &:first-child{
+  order: 3;
+  }
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: capitalize;
+  flex-basis: 200px;
+
+  span{
+    font-size: 26px;
+    line-height: 30px;
+    align-self: center;
+    &:last-of-type{
+      font-style: oblique;
+      font-size: 18px;
+      font-weight: 700;
+    }
+  }
+
+}
+.firstSign{
+  color: #FF9900;
+}
+.secondSign{
+  color: #CB82CE;
+}
+.contentResult{
+  flex-basis: 300px;
+  height: 100%;
+  box-sizing: border-box;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 50px;
+  padding: 30px;
+  order: 1;
+  .info{
+    display: flex;
+    flex-grow: 7;
+    align-items: end;
+  }
+  .result{
+    flex-grow: 3;
+    font-size: 48px;
+    justify-self: flex-end;
+    font-weight: 800;
+  }
+}
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.addition{
+  color: #949494;
+  font-size: 16px;
+  font-style: oblique;
+  margin-bottom: 5px;
+}
+.additionLoader{
+text-align: center;
+  font-size: 18px;
+  margin: 0;
+  margin-top: 20px;
+  font-style: oblique;
+  font-weight: 600;
+}

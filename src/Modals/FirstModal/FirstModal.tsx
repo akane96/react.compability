@@ -4,23 +4,24 @@ import style from './style.module.scss'
 import Button from "../../Components/Generic/Button/Button";
 import {ModalState, Person} from "../../Types/models";
 interface Props extends HTMLAttributes<HTMLElement >{
-    disabled:boolean
     onClick:()=>void
     persons:{firstPerson:Person,secondPerson:Person}
 }
 
-const FirstModal:FC <Props> = ({disabled,onClick,persons}) => {
+const FirstModal:FC <Props> = ({onClick,persons}) => {
 
     const handleSubmit = ()=> {
         persons.firstPerson.name=firstName
         persons.secondPerson.name=secondName
+        setFirstName('')
+        setSecondName('')
         onClick()
     }
 
     const [firstName,setFirstName] = useState('')
     const [secondName,setSecondName] = useState('')
 
-    return !disabled ?(
+    return (
         <>
         <div className={style.wrapper}>
                     <div  className={style.header}>Введите имена:</div>
@@ -35,11 +36,11 @@ const FirstModal:FC <Props> = ({disabled,onClick,persons}) => {
                         />
                     </div>
             <div className={style.button}>
-                        <Button disabled={!firstName && !secondName} className={style.button} type={'button'} onClick={handleSubmit} >Продолжить</Button>
+                        <Button disabled={!firstName || !secondName} className={style.button} type={'button'} onClick={handleSubmit} >Продолжить</Button>
                     </div>
             </div>
         </>
-    ) : <></>
+    ) 
 };
 
 export default FirstModal;

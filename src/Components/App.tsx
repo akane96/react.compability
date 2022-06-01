@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import AppHeader from "./AppHeader/AppHeader";
 import AppMain from "./AppMain/AppMain";
 import AppFooter from "./AppFooter/AppFooter";
@@ -38,12 +38,23 @@ const App:React.FC<Props> = ({
     const handleChangeModalState = (state:ModalState)=>{
         setModalState(state)
     }
+    useEffect(()=>{
+        handleChangeModalState('First')
+    },[firstPerson,secondPerson])
+
+    const resetParameters= () => {
+
+        setFirstPerson(new Person('',''))
+        setSecondPerson(new Person('',''))
+    }
 
     const mainModal = (
-        <MainModal setOpen={()=>setModalActive(!modalActive)} name={'Подсчёт совместимости'}>
-            <FirstModal  persons={{firstPerson,secondPerson}}  disabled={modalState!=='First'} onClick={()=>handleChangeModalState('Second')}  />
-            <SecondModal persons={{firstPerson,secondPerson}} disabled={modalState!=='Second'} onClick={()=>handleChangeModalState('Third')} />
-            <ThirdModal persons={{firstPerson,secondPerson}}  disabled={modalState!=='Third'} onClick={()=>handleChangeModalState('First')} />
+        <MainModal setOpen={()=>setModalActive(!modalActive)} name={'Совместимость'}>
+            { modalState==='First' && <FirstModal  persons={{firstPerson,secondPerson}}  onClick={()=>handleChangeModalState('Second')}  />}
+            { modalState==='Second' && <SecondModal persons={{firstPerson,secondPerson}}  onClick={()=>handleChangeModalState('Third')} />}
+            { modalState==='Third' && <ThirdModal persons={{firstPerson,secondPerson}} onClick={()=>{
+                resetParameters()
+            }} />}
         </MainModal>
     )
 
