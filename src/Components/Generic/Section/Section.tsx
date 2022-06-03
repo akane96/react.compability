@@ -27,7 +27,7 @@ const Section:React.FC<Props> = (
     return (
         <div className={sectionType}>
             <div className={sectionType === SectionMap.get(SectionType.Secondary) ? style.wrapperFooter : style.wrapper}>
-            {children}
+                {children}
             </div>
         </div>
     );

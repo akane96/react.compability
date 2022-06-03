@@ -17,8 +17,6 @@ const SecondModal:FC<Props> = ({onClick,persons}) => {
     const handleSubmit = ()=> {
         persons.firstPerson.sign=firstSign
         persons.secondPerson.sign=secondSign
-        setFirstSign('Овен')
-        setSecondSign('Овен')
         onClick()
     }
 

@@ -7,7 +7,6 @@ import MainModal from "../../Modals/MainModal/MainModal";
 
 interface Props{
     action: () => void,
-
 }
 
 const AppMain:React.FC<Props> = ({action}) => {

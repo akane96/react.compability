@@ -3,7 +3,7 @@ import MainModal from "../MainModal/MainModal";
 import style from './style.module.scss'
 import Button from "../../Components/Generic/Button/Button";
 import {ModalState, Person} from "../../Types/models";
-interface Props extends HTMLAttributes<HTMLElement >{
+interface Props extends HTMLAttributes<HTMLElement>{
     onClick:()=>void
     persons:{firstPerson:Person,secondPerson:Person}
 }
@@ -13,8 +13,6 @@ const FirstModal:FC <Props> = ({onClick,persons}) => {
     const handleSubmit = ()=> {
         persons.firstPerson.name=firstName
         persons.secondPerson.name=secondName
-        setFirstName('')
-        setSecondName('')
         onClick()
     }
 
@@ -40,7 +38,7 @@ const FirstModal:FC <Props> = ({onClick,persons}) => {
                     </div>
             </div>
         </>
-    ) 
+    )
 };
 
 export default FirstModal;
