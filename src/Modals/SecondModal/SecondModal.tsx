@@ -23,7 +23,7 @@ const SecondModal:FC<Props> = ({onClick,persons}) => {
     return  (
         <>
             <div className={style.wrapper}>
-                <div  className={style.header}>Введите имена:</div>
+                <div  className={style.header}>Введите знаки зодиака:</div>
                 <div className={modalStyle.selectButtons}>
                     <SelectSign value={firstSign} onChange={(e:any)=>setFirstSign(e.currentTarget.value)}></SelectSign>
                     <SelectSign value={secondSign} onChange={(e:any)=>setSecondSign(e.currentTarget.value)}></SelectSign>

@@ -32,7 +32,7 @@ const ThirdModal:FC<Props> = ({onClick,persons}) => {
 
     const loader =
         <div>
-            <p className={style.additionLoader}>Узнаем у предсказателья...</p>
+            <p className={style.additionLoader}>Узнаем у предсказателя...</p>
             <CircleLoader color={'#CB82CE'} css={override} size={150} loading={loading}/>
         </div>
 
